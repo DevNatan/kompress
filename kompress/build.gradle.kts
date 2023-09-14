@@ -18,9 +18,12 @@ kotlin {
     linuxX64()
     macosArm64()
 
-
     sourceSets {
-        val commonMain by getting {}
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.3.0")
+            }
+        }
         val nativeMain by creating { dependsOn(commonMain) }
 
         // Android and Linux targets

@@ -8,4 +8,4 @@ pluginManagement {
     }
 }
 
-include("lib")
+include("kompress")

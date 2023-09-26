@@ -1,1 +1,1 @@
-# kompress
+# komprimido

@@ -15,8 +15,8 @@ kotlin {
     explicitApi()
 
     jvm()
-    linuxX64()
-    macosArm64()
+//    linuxX64()
+//    macosArm64()
 
     sourceSets {
         val commonMain by getting {
@@ -38,15 +38,15 @@ kotlin {
             }
         }
 
-        val nativeMain by creating { dependsOn(commonMain) }
+//        val nativeMain by creating { dependsOn(commonMain) }
 
         // Android and Linux targets
-        val nixMain by creating { dependsOn(nativeMain) }
-        val linuxX64Main by getting { dependsOn(nixMain) }
-
-        // macOS and iOS targets
-        val appleMain by creating { dependsOn(nativeMain) }
-        val macosArm64Main by getting { dependsOn(appleMain) }
+//        val nixMain by creating { dependsOn(nativeMain) }
+//        val linuxX64Main by getting { dependsOn(nixMain) }
+//
+//        // macOS and iOS targets
+//        val appleMain by creating { dependsOn(nativeMain) }
+//        val macosArm64Main by getting { dependsOn(appleMain) }
     }
 
     sourceSets.configureEach {

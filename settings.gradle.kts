@@ -1,4 +1,4 @@
-rootProject.name = "komprimido"
+rootProject.name = "kompress"
 
 pluginManagement {
     dependencyResolutionManagement {
@@ -8,4 +8,4 @@ pluginManagement {
     }
 }
 
-include("komprimido")
+include("kompress")

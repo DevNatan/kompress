@@ -1,6 +1,6 @@
 # kompress
 
-A simple and straightforward compression library to Kotlin Multiplatform.
+A simple and straightforward Kotlin library to create and extract .tar files.
 
 * Android/JVM: Apache Commons Compress™
 

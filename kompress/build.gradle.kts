@@ -1,7 +1,5 @@
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
-
 plugins {
-    kotlin("multiplatform") version "1.9.10"
+    kotlin("multiplatform") version "1.9.20"
 }
 
 group = "me.devnatan"
@@ -15,8 +13,6 @@ kotlin {
     explicitApi()
 
     jvm()
-//    linuxX64()
-//    macosArm64()
 
     sourceSets {
         val commonMain by getting {
@@ -50,22 +46,13 @@ kotlin {
     }
 
     sourceSets.configureEach {
-        configureSourceSet()
-    }
-}
+        val suffix = "Main"
+        val srcDir = if (name.endsWith(suffix)) "src" else "test"
+        val platform = name.dropLast(suffix.length)
+        kotlin.srcDir("$platform/$srcDir")
 
-fun KotlinSourceSet.configureSourceSet() {
-    val suffix = "Main"
-    val srcDir = if (name.endsWith(suffix)) "src" else "test"
-    val platform = name.dropLast(suffix.length)
-    kotlin.srcDir("$platform/$srcDir")
-
-    when (name) {
-        "jvmMain" -> resources.srcDir("$platform/resources")
-        "jvmTest" -> resources.srcDir("$platform/test-resources")
-    }
-
-    languageSettings {
-        progressiveMode = true
+        languageSettings {
+            progressiveMode = true
+        }
     }
 }
